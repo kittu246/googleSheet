@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Sheet</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <nav id="nav">
+    <div class="top-bar">
+      <ul class="top-bar-icons">
+        <li id="home">Home</li>
+        <li id="file">File</li>
+        <li>Insert</li>
+        <li>Layout</li>
+        <li>Help</li>
+      </ul>
+    </div>
+    <div class="menuBar">
+      <div class="material-symbols-outlined symbol"> content_copy </div>
+      <div class="material-symbols-outlined symbol"> content_cut </div>
+      <div class="material-symbols-outlined symbol"> content_paste </div>
+
+     
+        <select id="textStyle" onchange="selectFontFamily(this)">
+            <option value="sans-serif">Sans-sarif</option>
+            <option value="Monospace">Monospace</option>
+            <option value="Poppins">Poppins</option>
+            <option value="cursive">Gabarito</option>
+        </select>
+   
+
+      <input class="font-size" id="font-size" oninput="selectInputValue(this)" placeholder="16px" width></input>
+      <div class="material-symbols-outlined symbol" onclick="boldnes(this)" id="boldButton"> format_bold </div>
+      <div class="material-symbols-outlined symbol" onclick="italicsStyle(this)" id="italicButton"> format_italic </div>
+      <div class="material-symbols-outlined symbol" onclick="underlinedStyle(this)" id="underlineButton"> format_underlined </div>
+      <div class = "material-symbols-outlined symbol text-align" onclick="textAlingButton(this)" data-value="left"> format_align_left  </div>
+      <div class="material-symbols-outlined symbol text-align" onclick="textAlingButton(this)" data-value="center"> format_align_center </div>
+      <div class="material-symbols-outlined symbol text-align" onclick="textAlingButton(this)" data-value="right"> format_align_right </div>
+      <label for="text-color" class="material-symbols-outlined symbol"> border_color </label>
+      <input id="text-color" type="color" style="height:0px; width:0px;" oninput="textColor(this)">
+      <label for="fill-color" class="material-symbols-outlined symbol"> format_color_fill </label>
+      <input id="fill-color" type="color" style="height:0px;width: 0px;" oninput="fillColor(this)">
+      
+      <div class="material-symbols-outlined symbol"> cloud_download </div>
+      <div class="material-symbols-outlined symbol"> cloud_upload </div>
+    </div>
+    <div class="statusbar">
+      <div id="active-Cell"></div>
+      <p>fx</p>
+      <div id="calculation"></div>
+    </div>
+  </nav>
+    <main style="width: 100vw; margin: auto; height: 70vh; overflow-y: scroll;overflow-x: scroll; background-color: rgb(244, 239, 239);"  >
+    <div id="head" ></div>
+    <section id="main"></section>
+  </main>
+  <div id="footer">
+    <div id="addSheet" class="material-symbols-outlined">
+      shadow_add
+      
+    </div>
+    <button id="btn1">Sheet 1</button>
+    <button>Sheet 2</button>
+  </div>
+    <script src="./script.js"></script>
+    
+  </body>
+</html>
